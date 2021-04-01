@@ -371,9 +371,10 @@ public class CreateAccount extends javax.swing.JFrame {
         FileWriter fileWriter = new FileWriter(codeSick);
         BufferedWriter writer = new BufferedWriter(fileWriter);
         writer.write(passcode);
-        System.out.println(passcode);
         writer.flush();
         writer.close();
+        
+        JOptionPane.showInternalMessageDialog(null, passcode, "رمز عبور بیمار", 1);
         
     }
 
