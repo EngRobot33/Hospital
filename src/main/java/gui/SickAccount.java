@@ -79,6 +79,7 @@ public class SickAccount extends javax.swing.JFrame {
     }
     
     public void showPanel(){
+        this.setResizable(false);
         this.setVisible(true);
     }
 

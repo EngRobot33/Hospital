@@ -192,6 +192,7 @@ public class Nurse extends javax.swing.JFrame {
     
     public void showPanel(){
         this.setVisible(true);
+        this.setResizable(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

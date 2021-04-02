@@ -164,6 +164,7 @@ public class Accountant extends javax.swing.JFrame {
     }
     
     public void showPanel(){
+        this.setResizable(false);
         this.setVisible(true);
     }
 

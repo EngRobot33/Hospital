@@ -229,17 +229,16 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
 
-        
         try {
-            randomPassCodeGenerator();
-            writeSickID();
-            writeSickName();
-            writeSickFamily();
-            writeSickAge();
-            writeSickSex();
-            writeSickIllness();
-            writeSickHistory();
-            JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);  
+                randomPassCodeGenerator();
+                writeSickID();
+                writeSickName();
+                writeSickFamily();
+                writeSickAge();
+                writeSickSex();
+                writeSickIllness();
+                writeSickHistory();
+                JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);
         } catch (IOException ex) {
             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
@@ -283,6 +282,7 @@ public class CreateAccount extends javax.swing.JFrame {
     }
 
     public void showPanel() {
+        this.setResizable(false);
         this.setVisible(true);
     }
 
@@ -295,7 +295,7 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
+
     public void writeSickName() throws IOException {
         String id = this.idSickField.getText();
         String name = this.nameSickField.getText();
@@ -328,7 +328,7 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
+
     public void writeSickSex() throws IOException {
         String id = this.idSickField.getText();
         String sex = this.sexSickField.getText();
@@ -339,7 +339,7 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
+
     public void writeSickIllness() throws IOException {
         String id = this.idSickField.getText();
         String illness = this.illnessSickField.getText();
@@ -350,7 +350,7 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
+
     public void writeSickHistory() throws IOException {
         String id = this.idSickField.getText();
         String history = this.historySickField.getText();
@@ -361,8 +361,8 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
-    public void randomPassCodeGenerator() throws IOException{
+
+    public void randomPassCodeGenerator() throws IOException {
         SecureRandom random = new SecureRandom();
         int passcodeInt = random.nextInt(90000000) + 10000000;
         String passcode = passcodeInt + "";
@@ -373,9 +373,9 @@ public class CreateAccount extends javax.swing.JFrame {
         writer.write(passcode);
         writer.flush();
         writer.close();
-        
+
         JOptionPane.showInternalMessageDialog(null, passcode, "رمز عبور بیمار", 1);
-        
+
     }
 
 
