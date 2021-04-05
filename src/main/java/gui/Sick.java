@@ -228,7 +228,7 @@ public class Sick extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entranceButton;
-    private javax.swing.JTextField idSickField;
+    public static javax.swing.JTextField idSickField;
     private javax.swing.JLabel idSickLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField passwordSickField;
