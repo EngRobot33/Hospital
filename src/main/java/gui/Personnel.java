@@ -6,9 +6,7 @@
 package main.java.gui;
 
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
@@ -173,8 +171,7 @@ public class Personnel extends javax.swing.JFrame {
                 readNurseUsername();
             }
         } catch (IOException ex) {
-            System.out.println("اطلاعات وارد شده صحیح نمی باشد.");
-            Logger.getLogger(Personnel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "شماره پرسنلی یا رمز عبور را وارد کنید.", "خطای سیستم", 0);
         }
     }//GEN-LAST:event_entranceButtonActionPerformed
 
@@ -272,7 +269,7 @@ public class Personnel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entranceButton;
-    private javax.swing.JTextField idPersonnelField;
+    public static javax.swing.JTextField idPersonnelField;
     private javax.swing.JLabel idPersonnelLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

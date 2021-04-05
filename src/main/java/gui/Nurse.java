@@ -5,6 +5,12 @@
  */
 package main.java.gui;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *
  * @author Khosravi
@@ -189,10 +195,27 @@ public class Nurse extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void showPanel(){
+
+    public void showPanel() throws IOException {
+
         this.setVisible(true);
         this.setResizable(false);
+        usernameNurseReader();
+
+    }
+
+    public void usernameNurseReader() throws FileNotFoundException, IOException {
+
+        String username = Personnel.idPersonnelField.getText();
+
+        File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - name.txt");
+        FileReader IDfileReader = new FileReader(IDfile);
+        BufferedReader IDReader = new BufferedReader(IDfileReader);
+
+        String idText = IDReader.readLine();
+        
+        nurseNameLabel.setText(idText);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
