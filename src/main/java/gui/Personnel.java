@@ -5,6 +5,7 @@
  */
 package main.java.gui;
 
+import java.awt.*;
 import java.io.*;
 import javax.swing.*;
 
@@ -164,10 +165,10 @@ public class Personnel extends javax.swing.JFrame {
     private void entranceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entranceButtonActionPerformed
 
         try {
-            if(jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")){
+            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")) {
                 readDoctorUsername();
             }
-            if(jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")){
+            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")) {
                 readNurseUsername();
             }
         } catch (IOException ex) {
@@ -211,12 +212,16 @@ public class Personnel extends javax.swing.JFrame {
     }
 
     public void showPanel() {
+        
         this.setResizable(false);
         this.setVisible(true);
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
+        
     }
 
     public void readDoctorUsername() throws FileNotFoundException, IOException {
-        
+
         String username = idPersonnelField.getText();
         String password = passwordPersonnelField.getText();
 
@@ -230,18 +235,18 @@ public class Personnel extends javax.swing.JFrame {
 
         String idText = IDReader.readLine();
         String codeText = PassReader.readLine();
-        
-        if(idText.contains(username) && codeText.contains(password)){
-            if(jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")){
+
+        if (idText.contains(username) && codeText.contains(password)) {
+            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")) {
                 Doctor doctor = new Doctor();
                 this.setVisible(false);
                 doctor.showPanel();
             }
         }
     }
-    
-        public void readNurseUsername() throws FileNotFoundException, IOException {
-        
+
+    public void readNurseUsername() throws FileNotFoundException, IOException {
+
         String username = idPersonnelField.getText();
         String password = passwordPersonnelField.getText();
 
@@ -255,17 +260,18 @@ public class Personnel extends javax.swing.JFrame {
 
         String idText = IDReader.readLine();
         String codeText = PassReader.readLine();
-        
-        if(idText.contains(username) && codeText.contains(password)){
-            if(jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")){
+
+        if (idText.contains(username) && codeText.contains(password)) {
+            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")) {
                 Nurse nurse = new Nurse();
                 this.setVisible(false);
                 nurse.showPanel();
             }
-        } else{
+        } else {
             JOptionPane.showInternalMessageDialog(null, "اطلاعات وارد شده صحیح نمی باشد.", "پیغام سیستم", 0);
         }
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entranceButton;

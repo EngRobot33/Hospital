@@ -5,6 +5,8 @@
  */
 package main.java.gui;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -158,6 +160,8 @@ public class SickAccount extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         nameSickReader();
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
         
     }
     
