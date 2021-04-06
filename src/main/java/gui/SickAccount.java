@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,7 +49,7 @@ public class SickAccount extends javax.swing.JFrame {
         nameSickLabel.setText("نام بیمار: ");
 
         healthDetailsButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
-        healthDetailsButton.setText("جزئیات وضعیت بهبودی");
+        healthDetailsButton.setText("گزارش وضعیت بیمار");
         healthDetailsButton.setFocusable(false);
         healthDetailsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,10 +85,10 @@ public class SickAccount extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(healthDetailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(billButton, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(healthDetailsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(122, 122, 122))
         );
         layout.setVerticalGroup(
@@ -107,6 +109,14 @@ public class SickAccount extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void healthDetailsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_healthDetailsButtonActionPerformed
+
+        SickSituation sickSituation = new SickSituation();
+        this.setVisible(false);
+        try {
+            sickSituation.showPanel();
+        } catch (IOException ex) {
+            Logger.getLogger(SickAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_healthDetailsButtonActionPerformed
 
@@ -156,13 +166,15 @@ public class SickAccount extends javax.swing.JFrame {
     }
     
     public void showPanel() throws IOException{
-        
         this.setResizable(false);
         this.setVisible(true);
         nameSickReader();
+        setCenter();
+    }
+    
+    public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
-        
     }
     
     public void nameSickReader() throws FileNotFoundException, IOException {

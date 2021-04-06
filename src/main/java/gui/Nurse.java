@@ -8,10 +8,13 @@ package main.java.gui;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,9 +43,9 @@ public class Nurse extends javax.swing.JFrame {
         idSickLabel = new javax.swing.JLabel();
         idSickField = new javax.swing.JTextField();
         drugLabel = new javax.swing.JLabel();
-        conditionSickLabel = new javax.swing.JLabel();
+        situationSickLabel = new javax.swing.JLabel();
         drugComboBox = new javax.swing.JComboBox<>();
-        conditionSickComboBox = new javax.swing.JComboBox<>();
+        situationSickComboBox = new javax.swing.JComboBox<>();
         recordButton = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
 
@@ -63,19 +66,24 @@ public class Nurse extends javax.swing.JFrame {
         drugLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         drugLabel.setText("داروی مصرف شده");
 
-        conditionSickLabel.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
-        conditionSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        conditionSickLabel.setText("شرایط بیمار");
+        situationSickLabel.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        situationSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        situationSickLabel.setText("وضعیت بیمار");
 
         drugComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         drugComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "داروی شماره 1", "داروی شماره 2", "داروی شماره 3", "داروی شماره 4" }));
 
-        conditionSickComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
-        conditionSickComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "خوب", "متوسط", "بد" }));
+        situationSickComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
+        situationSickComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "خوب", "متوسط", "بد" }));
 
         recordButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
         recordButton.setText("ثبت");
         recordButton.setFocusable(false);
+        recordButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recordButtonActionPerformed(evt);
+            }
+        });
 
         returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
         returnButton.setText("بازگشت");
@@ -107,9 +115,9 @@ public class Nurse extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(conditionSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(situationSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(conditionSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(situationSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(123, 123, 123)
@@ -133,8 +141,8 @@ public class Nurse extends javax.swing.JFrame {
                     .addComponent(drugComboBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(conditionSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(conditionSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(situationSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(situationSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addComponent(recordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
@@ -161,6 +169,14 @@ public class Nurse extends javax.swing.JFrame {
         this.setVisible(false);
         personnel.showPanel();
     }//GEN-LAST:event_returnButtonActionPerformed
+
+    private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
+        try {
+            writeSickReport();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "همچین بیماری وجود ندارد.", "خطای سیستم", 0);
+        }
+    }//GEN-LAST:event_recordButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,13 +215,15 @@ public class Nurse extends javax.swing.JFrame {
     }
 
     public void showPanel() throws IOException {
-
         this.setVisible(true);
         this.setResizable(false);
         usernameNurseReader();
+        setCenter();
+    }
+    
+    public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
-
     }
 
     public void usernameNurseReader() throws FileNotFoundException, IOException {
@@ -221,10 +239,30 @@ public class Nurse extends javax.swing.JFrame {
         nurseNameLabel.setText(idText);
 
     }
+    
+    public void writeSickReport() throws IOException {
+        String id = this.idSickField.getText();
+        String drug = this.drugComboBox.getSelectedItem().toString();
+        String situation = this.situationSickComboBox.getSelectedItem().toString();
+        String username = Personnel.idPersonnelField.getText();
+        
+        File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - name.txt");
+        FileReader IDfileReader = new FileReader(IDfile);
+        BufferedReader IDReader = new BufferedReader(IDfileReader);
+        
+        String name = IDReader.readLine();
+        
+        String report = name + ")   داروی مصرف شده: " + drug + "،   وضعیت حال بیمار: " + situation;
+
+        File nurseSick = new File("src\\main\\java\\data\\sick\\" + id + " - report.txt");
+        FileWriter fileWriter = new FileWriter(nurseSick, true);
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+        writer.write(report + "\r\n");
+        writer.flush();
+        writer.close();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> conditionSickComboBox;
-    private javax.swing.JLabel conditionSickLabel;
     private javax.swing.JComboBox<String> drugComboBox;
     private javax.swing.JLabel drugLabel;
     private javax.swing.JTextField idSickField;
@@ -233,5 +271,7 @@ public class Nurse extends javax.swing.JFrame {
     private javax.swing.JLabel nurseNameLabel;
     private javax.swing.JButton recordButton;
     private javax.swing.JButton returnButton;
+    private javax.swing.JComboBox<String> situationSickComboBox;
+    private javax.swing.JLabel situationSickLabel;
     // End of variables declaration//GEN-END:variables
 }

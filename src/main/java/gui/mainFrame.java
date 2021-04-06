@@ -184,13 +184,15 @@ public class mainFrame extends javax.swing.JFrame {
         });
     }
     
-    public void showPanel(){
-        
+    public void showPanel(){ 
         this.setResizable(false);
         this.setVisible(true);
+        setCenter();
+    }
+    
+    public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

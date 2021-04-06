@@ -232,15 +232,15 @@ public class CreateAccount extends javax.swing.JFrame {
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
 
         try {
-                randomPassCodeGenerator();
-                writeSickID();
-                writeSickName();
-                writeSickFamily();
-                writeSickAge();
-                writeSickSex();
-                writeSickIllness();
-                writeSickHistory();
-                JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);
+            randomPassCodeGenerator();
+            writeSickID();
+            writeSickName();
+            writeSickFamily();
+            writeSickAge();
+            writeSickSex();
+            writeSickIllness();
+            writeSickHistory();
+            JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);
         } catch (IOException ex) {
             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex.getMessage());
@@ -284,12 +284,14 @@ public class CreateAccount extends javax.swing.JFrame {
     }
 
     public void showPanel() {
-        
         this.setResizable(false);
         this.setVisible(true);
+        setCenter();
+    }
+
+    public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
-        
     }
 
     public void writeSickID() throws IOException {

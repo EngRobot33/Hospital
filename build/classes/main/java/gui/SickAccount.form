@@ -30,10 +30,10 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="returnButton" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                  <Component id="billButton" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                  <Component id="healthDetailsButton" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="billButton" alignment="0" pref="250" max="32767" attributes="0"/>
+                  <Component id="healthDetailsButton" alignment="0" pref="250" max="32767" attributes="0"/>
+                  <Component id="returnButton" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
           </Group>
@@ -70,7 +70,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="B Titr" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#x62c;&#x632;&#x626;&#x6cc;&#x627;&#x62a; &#x648;&#x636;&#x639;&#x6cc;&#x62a; &#x628;&#x647;&#x628;&#x648;&#x62f;&#x6cc;"/>
+        <Property name="text" type="java.lang.String" value="&#x6af;&#x632;&#x627;&#x631;&#x634; &#x648;&#x636;&#x639;&#x6cc;&#x62a; &#x628;&#x6cc;&#x645;&#x627;&#x631;"/>
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
