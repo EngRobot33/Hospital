@@ -21,9 +21,9 @@ import java.util.logging.Logger;
  */
 public class SickAccount extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SickAccount
-     */
+    static int balance;
+
+    
     public SickAccount() {
         initComponents();
     }
@@ -44,11 +44,11 @@ public class SickAccount extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        nameSickLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        nameSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         nameSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nameSickLabel.setText("نام بیمار: ");
 
-        healthDetailsButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        healthDetailsButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         healthDetailsButton.setText("گزارش وضعیت بیمار");
         healthDetailsButton.setFocusable(false);
         healthDetailsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +57,7 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
 
-        billButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        billButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         billButton.setText("مشاهده صورتحساب");
         billButton.setFocusable(false);
         billButton.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +66,7 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -117,11 +117,17 @@ public class SickAccount extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(SickAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_healthDetailsButtonActionPerformed
 
     private void billButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billButtonActionPerformed
-        
+        SickShowBill sickShowBill = new SickShowBill();
+        this.setVisible(false);
+        try {
+            sickShowBill.showPanel();
+        } catch (IOException ex) {
+            Logger.getLogger(SickAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_billButtonActionPerformed
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
@@ -164,19 +170,19 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void showPanel() throws IOException{
+
+    public void showPanel() throws IOException {
         this.setResizable(false);
         this.setVisible(true);
         nameSickReader();
         setCenter();
     }
-    
+
     public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
     }
-    
+
     public void nameSickReader() throws FileNotFoundException, IOException {
 
         String id = Sick.idSickField.getText();
@@ -184,7 +190,7 @@ public class SickAccount extends javax.swing.JFrame {
         File nameFile = new File("src\\main\\java\\data\\sick\\" + id + " - name.txt");
         FileReader nameFileReader = new FileReader(nameFile);
         BufferedReader nameReader = new BufferedReader(nameFileReader);
-        
+
         File familyFile = new File("src\\main\\java\\data\\sick\\" + id + " - family.txt");
         FileReader familyFileReader = new FileReader(familyFile);
         BufferedReader familyReader = new BufferedReader(familyFileReader);
@@ -192,7 +198,7 @@ public class SickAccount extends javax.swing.JFrame {
         String nameText = nameReader.readLine();
         String familyText = familyReader.readLine();
         String fullName = nameText + " " + familyText;
-        
+
         nameSickLabel.setText(fullName);
 
     }

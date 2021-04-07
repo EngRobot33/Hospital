@@ -46,7 +46,7 @@ public class Sick extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sickLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        sickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         sickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sickLabel.setText("ورود بیمار");
 
@@ -64,7 +64,7 @@ public class Sick extends javax.swing.JFrame {
         idSickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         idSickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        entranceButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        entranceButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         entranceButton.setText("ورود");
         entranceButton.setFocusable(false);
         entranceButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +73,7 @@ public class Sick extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {

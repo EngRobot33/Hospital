@@ -9,6 +9,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -41,7 +42,7 @@ public class SickSituation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        situationSickLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        situationSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         situationSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         situationSickLabel.setText("گزارش وضعیت بیمار");
 
@@ -75,6 +76,7 @@ public class SickSituation extends javax.swing.JFrame {
 
         returnButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
         returnButton.setText("بازگشت");
+        returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 returnButtonActionPerformed(evt);
@@ -169,7 +171,9 @@ public class SickSituation extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setFont();
         infoReader();
+        rightAlignment();
     }
 
     public void setCenter() {
@@ -192,17 +196,26 @@ public class SickSituation extends javax.swing.JFrame {
         nameReader.close();
 
         String[] info = text.split(";");
-        
-        DefaultTableModel model = (DefaultTableModel)reportTable.getModel();
-        Font font = new Font("B Titr", Font.BOLD, 20);
-        reportTable.getTableHeader().setFont(font);
 
-        for(int i = 0; i < info.length; i++){
+        DefaultTableModel model = (DefaultTableModel) reportTable.getModel();
+
+        for (int i = 0; i < info.length; i++) {
             model.addRow(new Object[]{info[i]});
         }
 
     }
-  
+
+    public void setFont() {
+        Font font = new Font("B Titr", Font.BOLD, 20);
+        reportTable.getTableHeader().setFont(font);
+    }
+
+    public void rightAlignment() {
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(DefaultTableCellRenderer.RIGHT);
+        reportTable.getColumn("گزارش").setCellRenderer(rightRenderer);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

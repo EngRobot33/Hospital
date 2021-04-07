@@ -110,7 +110,7 @@
         <Component class="javax.swing.JLabel" name="nurseNameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="36" style="1"/>
+              <Font name="B Titr" size="42" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&#x646;&#x627;&#x645; &#x67e;&#x631;&#x633;&#x62a;&#x627;&#x631;: "/>
@@ -189,7 +189,7 @@
         <Component class="javax.swing.JButton" name="recordButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x62b;&#x628;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -201,7 +201,7 @@
         <Component class="javax.swing.JButton" name="returnButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x634;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>

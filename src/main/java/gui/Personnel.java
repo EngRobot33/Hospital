@@ -44,7 +44,7 @@ public class Personnel extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ورود پرسنل بیمارستان");
 
@@ -62,7 +62,7 @@ public class Personnel extends javax.swing.JFrame {
         jobPersonnelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jobPersonnelLabel.setText("شغل");
 
-        entranceButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        entranceButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         entranceButton.setText("ورود");
         entranceButton.setFocusable(false);
         entranceButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +71,7 @@ public class Personnel extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {

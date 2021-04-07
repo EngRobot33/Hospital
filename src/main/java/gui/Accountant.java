@@ -38,11 +38,11 @@ public class Accountant extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        accountantLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        accountantLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         accountantLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         accountantLabel.setText("بخش حسابداری بیمارستان");
 
-        createAccountButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        createAccountButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         createAccountButton.setText("ایجاد حساب بیمار");
         createAccountButton.setFocusable(false);
         createAccountButton.addActionListener(new java.awt.event.ActionListener() {
@@ -51,7 +51,7 @@ public class Accountant extends javax.swing.JFrame {
             }
         });
 
-        billButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        billButton.setFont(new java.awt.Font("B Titr", 1, 26)); // NOI18N
         billButton.setText("صدور صورتحساب بیمار");
         billButton.setFocusable(false);
         billButton.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class Accountant extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {

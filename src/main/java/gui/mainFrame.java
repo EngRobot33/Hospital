@@ -31,7 +31,7 @@ public class mainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         hospitalLabel = new javax.swing.JLabel();
         accountantButton = new javax.swing.JButton();
         personnelButton = new javax.swing.JButton();
@@ -40,11 +40,13 @@ public class mainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        hospitalLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        hospitalLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         hospitalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hospitalLabel.setText("سیستم مدیریت بیمارستان");
 
-        accountantButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        accountantButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         accountantButton.setText("حسابداری");
         accountantButton.setFocusable(false);
         accountantButton.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +55,7 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        personnelButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        personnelButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         personnelButton.setText("پرسنل");
         personnelButton.setFocusable(false);
         personnelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +64,7 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        sickButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        sickButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         sickButton.setText("بیمار");
         sickButton.setFocusable(false);
         sickButton.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +73,7 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        exitButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        exitButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         exitButton.setText("خروج");
         exitButton.setFocusable(false);
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -80,26 +82,26 @@ public class mainFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hospitalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(accountantButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(personnelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sickButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(156, 156, 156))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(hospitalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -117,11 +119,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -199,7 +201,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton accountantButton;
     private javax.swing.JButton exitButton;
     private javax.swing.JLabel hospitalLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JButton personnelButton;
     private javax.swing.JButton sickButton;
     // End of variables declaration//GEN-END:variables

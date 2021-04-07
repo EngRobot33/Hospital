@@ -7,6 +7,9 @@ package main.java.gui;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,7 +42,7 @@ public class AccountantBill extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        billLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        billLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         billLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         billLabel.setText("صدور صورتحساب");
 
@@ -55,11 +58,16 @@ public class AccountantBill extends javax.swing.JFrame {
             }
         });
 
-        emissionButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
+        emissionButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         emissionButton.setText("صدور");
         emissionButton.setFocusable(false);
+        emissionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emissionButtonActionPerformed(evt);
+            }
+        });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +137,15 @@ public class AccountantBill extends javax.swing.JFrame {
         accountant.showPanel();
     }//GEN-LAST:event_returnButtonActionPerformed
 
+    private void emissionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emissionButtonActionPerformed
+        AccountantShowBill showBill = new AccountantShowBill();
+        this.setVisible(false);
+        try {
+            showBill.showPanel();
+        } catch (IOException ex) {
+        }
+    }//GEN-LAST:event_emissionButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,7 +195,7 @@ public class AccountantBill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel billLabel;
     private javax.swing.JButton emissionButton;
-    private javax.swing.JTextField idSickField;
+    public static javax.swing.JTextField idSickField;
     private javax.swing.JLabel idSickLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton returnButton;

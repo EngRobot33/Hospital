@@ -56,7 +56,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ایجاد حساب کاربری بیمار");
 
@@ -109,7 +109,7 @@ public class CreateAccount extends javax.swing.JFrame {
         historySickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         historySickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        createAccountButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        createAccountButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         createAccountButton.setText("ایجاد حساب");
         createAccountButton.setFocusable(false);
         createAccountButton.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +118,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {

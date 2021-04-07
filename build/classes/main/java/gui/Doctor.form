@@ -47,24 +47,21 @@
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="recordButton" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="surgeryComboBox" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" pref="206" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="idSickField" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="idSickLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="illnessSickField" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="illnessSickLabel" max="32767" attributes="0"/>
-                              </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="surgeryComboBox" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="206" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="idSickField" min="-2" pref="200" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="idSickLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="illnessSickField" min="-2" pref="200" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="illnessSickLabel" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -106,7 +103,7 @@
         <Component class="javax.swing.JLabel" name="doctorNameLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="36" style="1"/>
+              <Font name="B Titr" size="42" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&#x646;&#x627;&#x645; &#x67e;&#x632;&#x634;&#x6a9;: "/>
@@ -132,7 +129,7 @@
         <Component class="javax.swing.JButton" name="returnButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x634;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -161,7 +158,7 @@
         <Component class="javax.swing.JButton" name="recordButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x62b;&#x628;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>

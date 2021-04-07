@@ -84,7 +84,7 @@
         <Component class="javax.swing.JLabel" name="billLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="36" style="1"/>
+              <Font name="B Titr" size="42" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&#x635;&#x62f;&#x648;&#x631; &#x635;&#x648;&#x631;&#x62a;&#x62d;&#x633;&#x627;&#x628;"/>
@@ -109,20 +109,26 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idSickFieldActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="emissionButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="28" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x635;&#x62f;&#x648;&#x631;"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emissionButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="returnButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="28" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x634;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>

@@ -52,7 +52,7 @@ public class Doctor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        doctorNameLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        doctorNameLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         doctorNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         doctorNameLabel.setText("نام پزشک: ");
 
@@ -63,7 +63,7 @@ public class Doctor extends javax.swing.JFrame {
         idSickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         idSickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class Doctor extends javax.swing.JFrame {
         illnessSickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         illnessSickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        recordButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        recordButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         recordButton.setText("ثبت");
         recordButton.setFocusable(false);
         recordButton.addActionListener(new java.awt.event.ActionListener() {
@@ -107,21 +107,19 @@ public class Doctor extends javax.swing.JFrame {
                         .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(recordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(surgeryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(idSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(illnessSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(illnessSickLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(surgeryComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(idSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(illnessSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(illnessSickLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -171,6 +169,7 @@ public class Doctor extends javax.swing.JFrame {
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
         try {
             recordWriter();
+            billCalculator();
         } catch (IOException ex) {
             Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -265,6 +264,29 @@ public class Doctor extends javax.swing.JFrame {
         writer.write(report + "\r\n");
         writer.flush();
         writer.close();
+    }
+    
+    public void billCalculator() throws IOException{
+        String id = this.idSickField.getText();
+        String surgery = this.surgeryComboBox.getSelectedItem().toString();
+
+        File billCal = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        FileWriter fileWriter = new FileWriter(billCal, true);
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+        
+        
+        if(surgery.equals("بله")){
+            writer.write("50000\r\n");
+            writer.write("500000\r\n");
+            writer.flush();
+            writer.close();
+        }
+        
+        if(surgery.equals("خیر")){
+            writer.write("50000\r\n");
+            writer.flush();
+            writer.close();
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

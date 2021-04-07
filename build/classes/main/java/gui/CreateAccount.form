@@ -144,7 +144,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="36" style="1"/>
+              <Font name="B Titr" size="42" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&#x627;&#x6cc;&#x62c;&#x627;&#x62f; &#x62d;&#x633;&#x627;&#x628; &#x6a9;&#x627;&#x631;&#x628;&#x631;&#x6cc; &#x628;&#x6cc;&#x645;&#x627;&#x631;"/>
@@ -272,7 +272,7 @@
         <Component class="javax.swing.JButton" name="createAccountButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x627;&#x6cc;&#x62c;&#x627;&#x62f; &#x62d;&#x633;&#x627;&#x628;"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -284,7 +284,7 @@
         <Component class="javax.swing.JButton" name="returnButton">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="24" style="1"/>
+              <Font name="B Titr" size="30" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x634;&#x62a;"/>
             <Property name="focusable" type="boolean" value="false"/>

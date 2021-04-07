@@ -69,7 +69,7 @@
         <Component class="javax.swing.JLabel" name="situationSickLabel">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="B Titr" size="36" style="1"/>
+              <Font name="B Titr" size="42" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="&#x6af;&#x632;&#x627;&#x631;&#x634; &#x648;&#x636;&#x639;&#x6cc;&#x62a; &#x628;&#x6cc;&#x645;&#x627;&#x631;"/>
@@ -104,6 +104,7 @@
               <Font name="B Titr" size="28" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x628;&#x627;&#x632;&#x6af;&#x634;&#x62a;"/>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnButtonActionPerformed"/>

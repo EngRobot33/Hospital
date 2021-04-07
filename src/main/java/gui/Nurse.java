@@ -51,7 +51,7 @@ public class Nurse extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        nurseNameLabel.setFont(new java.awt.Font("B Titr", 1, 36)); // NOI18N
+        nurseNameLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         nurseNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nurseNameLabel.setText("نام پرستار: ");
 
@@ -76,7 +76,7 @@ public class Nurse extends javax.swing.JFrame {
         situationSickComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         situationSickComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "خوب", "متوسط", "بد" }));
 
-        recordButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        recordButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         recordButton.setText("ثبت");
         recordButton.setFocusable(false);
         recordButton.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class Nurse extends javax.swing.JFrame {
             }
         });
 
-        returnButton.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
+        returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
         returnButton.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +173,7 @@ public class Nurse extends javax.swing.JFrame {
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
         try {
             writeSickReport();
+            billCalculator();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "همچین بیماری وجود ندارد.", "خطای سیستم", 0);
         }
@@ -220,7 +221,7 @@ public class Nurse extends javax.swing.JFrame {
         usernameNurseReader();
         setCenter();
     }
-    
+
     public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
@@ -235,23 +236,23 @@ public class Nurse extends javax.swing.JFrame {
         BufferedReader IDReader = new BufferedReader(IDfileReader);
 
         String idText = IDReader.readLine();
-        
+
         nurseNameLabel.setText(idText);
 
     }
-    
+
     public void writeSickReport() throws IOException {
         String id = this.idSickField.getText();
         String drug = this.drugComboBox.getSelectedItem().toString();
         String situation = this.situationSickComboBox.getSelectedItem().toString();
         String username = Personnel.idPersonnelField.getText();
-        
+
         File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - name.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
-        
+
         String name = IDReader.readLine();
-        
+
         String report = name + ")   داروی مصرف شده: " + drug + "،   وضعیت حال بیمار: " + situation;
 
         File nurseSick = new File("src\\main\\java\\data\\sick\\" + id + " - report.txt");
@@ -260,6 +261,40 @@ public class Nurse extends javax.swing.JFrame {
         writer.write(report + "\r\n");
         writer.flush();
         writer.close();
+    }
+
+    public void billCalculator() throws IOException {
+        String id = this.idSickField.getText();
+        String drug = this.drugComboBox.getSelectedItem().toString();
+
+        File billCal = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        FileWriter fileWriter = new FileWriter(billCal, true);
+        BufferedWriter writer = new BufferedWriter(fileWriter);
+
+        if (drug.equals("داروی شماره 1")) {
+            writer.write("100000\r\n");
+            writer.flush();
+            writer.close();
+        }
+
+        if (drug.equals("داروی شماره 2")) {
+            writer.write("200000\r\n");
+            writer.flush();
+            writer.close();
+        }
+        
+        if (drug.equals("داروی شماره 3")) {
+            writer.write("300000\r\n");
+            writer.flush();
+            writer.close();
+        }
+        
+        if (drug.equals("داروی شماره 4")) {
+            writer.write("400000\r\n");
+            writer.flush();
+            writer.close();
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
