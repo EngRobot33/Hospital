@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/SickSituation.java</file>
             <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/AccountantBill.java</file>
             <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/Sick.java</file>
-            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/SickShowBill.java</file>
-            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/SickAccount.java</file>
-            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/mainFrame.java</file>
+            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/MainClass.java</file>
+            <file>file:/C:/Users/Khosravi/Documents/NetBeansProjects/Hospital%20Management/src/main/java/gui/Menu.java</file>
         </group>
     </open-files>
 </project-private>

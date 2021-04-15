@@ -47,6 +47,7 @@ public class SickShowBill extends javax.swing.JFrame {
         billTable = new javax.swing.JTable();
         returnButton = new javax.swing.JButton();
         payButton = new javax.swing.JButton();
+        sumLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +101,10 @@ public class SickShowBill extends javax.swing.JFrame {
             }
         });
 
+        sumLabel.setFont(new java.awt.Font("B Nazanin", 1, 24)); // NOI18N
+        sumLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        sumLabel.setText("مبلغ قابل پرداخت: ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,19 +114,25 @@ public class SickShowBill extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
                     .addComponent(billSickLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(billSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,8 +164,7 @@ public class SickShowBill extends javax.swing.JFrame {
     }//GEN-LAST:event_returnButtonActionPerformed
 
     private void payButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payButtonActionPerformed
-
-        JOptionPane.showMessageDialog(null, "صورتحساب شما با موفقیت پرداخت شد.", "پرداخت صورتحساب", 1);
+        JOptionPane.showMessageDialog(null, "صورتحساب با موفقیت پرداخت شد.", "پیخام سیستم", 1);
     }//GEN-LAST:event_payButtonActionPerformed
 
     /**
@@ -200,6 +210,7 @@ public class SickShowBill extends javax.swing.JFrame {
         setFont();
         showSickName();
         billReader();
+        showSum(getSum());
         rightAlignment();
     }
 
@@ -209,8 +220,8 @@ public class SickShowBill extends javax.swing.JFrame {
     }
 
     public void billReader() throws FileNotFoundException, IOException {
+        int sum = 0;
         String id = Sick.idSickField.getText();
-
         File billFile = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
         FileReader billFileReader = new FileReader(billFile);
         BufferedReader billReader = new BufferedReader(billFileReader);
@@ -220,20 +231,14 @@ public class SickShowBill extends javax.swing.JFrame {
             text += line + ";";
         }
         billReader.close();
-
         String[] info = text.split(";");
-
         int[] bill = new int[info.length];
-        int sum = 0;
-
         for (int i = 0; i < info.length; i++) {
             bill[i] = Integer.parseInt(info[i]);
         }
-
         for (int i = 0; i < bill.length; i++) {
             sum += bill[i];
         }
-
         DefaultTableModel model = (DefaultTableModel) billTable.getModel();
         for (int i = 0; i < bill.length; i++) {
             if (bill[i] == 100000) {
@@ -250,23 +255,44 @@ public class SickShowBill extends javax.swing.JFrame {
                 model.addRow(new Object[]{"معالجه پزشک: " + bill[i]});
             }
         }
-        model.addRow(new Object[]{"جمع کل: " + sum});
-        
     }
-    
-    public void showSickName() throws FileNotFoundException, IOException{
+
+    public int getSum() throws FileNotFoundException, IOException {
+        int sum = 0;
+        String id = Sick.idSickField.getText();
+        File billFile = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        FileReader billFileReader = new FileReader(billFile);
+        BufferedReader billReader = new BufferedReader(billFileReader);
+        String text = "";
+        String line;
+        while ((line = billReader.readLine()) != null) {
+            text += line + ";";
+        }
+        billReader.close();
+        String[] info = text.split(";");
+        int[] bill = new int[info.length];
+        for (int i = 0; i < info.length; i++) {
+            bill[i] = Integer.parseInt(info[i]);
+        }
+        for (int i = 0; i < bill.length; i++) {
+            sum += bill[i];
+        }
+        return sum;
+    }
+
+    public void showSickName() throws FileNotFoundException, IOException {
         String id = Sick.idSickField.getText();
 
         File nameFile = new File("src\\main\\java\\data\\sick\\" + id + " - name.txt");
         FileReader nameFileReader = new FileReader(nameFile);
         BufferedReader nameReader = new BufferedReader(nameFileReader);
         String name = nameReader.readLine();
-        
+
         File familyFile = new File("src\\main\\java\\data\\sick\\" + id + " - family.txt");
         FileReader familyFileReader = new FileReader(familyFile);
         BufferedReader familyReader = new BufferedReader(familyFileReader);
         String family = familyReader.readLine();
-        
+
         billSickLabel.setText("صورتحساب " + name + " " + family);
     }
 
@@ -281,6 +307,10 @@ public class SickShowBill extends javax.swing.JFrame {
         billTable.getColumn("صورتحساب").setCellRenderer(rightRenderer);
     }
 
+    public void showSum(int sum) throws IOException {
+        sumLabel.setText("مبلغ قابل پرداخت: " + sum);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel billSickLabel;
     private javax.swing.JTable billTable;
@@ -288,5 +318,6 @@ public class SickShowBill extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton payButton;
     private javax.swing.JButton returnButton;
+    private javax.swing.JLabel sumLabel;
     // End of variables declaration//GEN-END:variables
 }

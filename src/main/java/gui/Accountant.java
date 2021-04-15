@@ -114,7 +114,7 @@ public class Accountant extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        mainFrame mainframe = new mainFrame();
+        Menu mainframe = new Menu();
         this.setVisible(false);
         mainframe.showPanel();
     }//GEN-LAST:event_returnButtonActionPerformed

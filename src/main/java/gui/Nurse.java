@@ -172,8 +172,13 @@ public class Nurse extends javax.swing.JFrame {
 
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
         try {
+            if (idSickField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "کد ملی بیمار را وارد کنید.", "خطای سیستم", 0);  
+            } else {
             writeSickReport();
-            billCalculator();
+            billCalculator(); 
+            JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت در سیستم ثبت شد.", "پیغام سیستم", 1);
+            }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "همچین بیماری وجود ندارد.", "خطای سیستم", 0);
         }

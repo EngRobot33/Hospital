@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -139,9 +140,14 @@ public class AccountantBill extends javax.swing.JFrame {
 
     private void emissionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emissionButtonActionPerformed
         AccountantShowBill showBill = new AccountantShowBill();
-        this.setVisible(false);
         try {
-            showBill.showPanel();
+            if(idSickField.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "کد ملی را وارد کنید.", "پیغام سیستم", 0);
+            }
+            else{
+                this.setVisible(false);
+                showBill.showPanel();
+            }
         } catch (IOException ex) {
         }
     }//GEN-LAST:event_emissionButtonActionPerformed

@@ -7,8 +7,8 @@ public class MainClass {
     
     public static void main(String[] args) throws IOException{
         
-        mainFrame mainframe = new mainFrame();
-        mainframe.showPanel();
+        Entrance entrance = new Entrance();
+        entrance.showPanel();
         
         /*File idPersonnel = new File("src\\main\\java\\data\\personnel\\doctor\\77244588 - name.txt");
         FileWriter fileWriter = new FileWriter(idPersonnel);

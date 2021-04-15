@@ -14,8 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -168,10 +167,15 @@ public class Doctor extends javax.swing.JFrame {
 
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
         try {
-            recordWriter();
-            billCalculator();
+            if (idSickField.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "کد ملی بیمار را وارد کنید.", "خطای سیستم", 0);
+            } else {
+                recordWriter();
+                billCalculator();
+                JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت در سیستم ثبت شد.", "پیغام سیستم", 1);
+            }
         } catch (IOException ex) {
-            Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "همچین بیماری وجود ندارد.", "خطای سیستم", 0);
         }
     }//GEN-LAST:event_recordButtonActionPerformed
 
@@ -209,19 +213,19 @@ public class Doctor extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void showPanel() throws IOException{
+
+    public void showPanel() throws IOException {
         this.setResizable(false);
         this.setVisible(true);
         usernameDoctorReader();
         setCenter();
     }
-    
+
     public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
     }
-    
+
     public void usernameDoctorReader() throws FileNotFoundException, IOException {
 
         String username = Personnel.idPersonnelField.getText();
@@ -231,32 +235,31 @@ public class Doctor extends javax.swing.JFrame {
         BufferedReader IDReader = new BufferedReader(IDfileReader);
 
         String idText = IDReader.readLine();
-        
+
         doctorNameLabel.setText(idText);
 
     }
-    
-    public void recordWriter() throws FileNotFoundException, IOException{
+
+    public void recordWriter() throws FileNotFoundException, IOException {
         String id = this.idSickField.getText();
         String surgery = this.surgeryComboBox.getSelectedItem().toString();
         String illness = illnessSickField.getText();
         String username = Personnel.idPersonnelField.getText();
-        
+
         File IDfile = new File("src\\main\\java\\data\\personnel\\doctor\\" + username + " - name.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
-        
+
         String name = IDReader.readLine();
-        
+
         String report = "";
-        
-        if (surgery.equals("بله")){
+
+        if (surgery.equals("بله")) {
             report = name + ")   شرح بیماری:  " + illness + "،   عمل جراحی:  " + surgery;
         }
-        if (surgery.equals("خیر")){
+        if (surgery.equals("خیر")) {
             report = name + ")   شرح بیماری:  " + illness + "،   عمل جراحی:  " + surgery;
         }
-        
 
         File nurseSick = new File("src\\main\\java\\data\\sick\\" + id + " - report.txt");
         FileWriter fileWriter = new FileWriter(nurseSick, true);
@@ -265,24 +268,23 @@ public class Doctor extends javax.swing.JFrame {
         writer.flush();
         writer.close();
     }
-    
-    public void billCalculator() throws IOException{
+
+    public void billCalculator() throws IOException {
         String id = this.idSickField.getText();
         String surgery = this.surgeryComboBox.getSelectedItem().toString();
 
         File billCal = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
         FileWriter fileWriter = new FileWriter(billCal, true);
         BufferedWriter writer = new BufferedWriter(fileWriter);
-        
-        
-        if(surgery.equals("بله")){
+
+        if (surgery.equals("بله")) {
             writer.write("50000\r\n");
             writer.write("500000\r\n");
             writer.flush();
             writer.close();
         }
-        
-        if(surgery.equals("خیر")){
+
+        if (surgery.equals("خیر")) {
             writer.write("50000\r\n");
             writer.flush();
             writer.close();

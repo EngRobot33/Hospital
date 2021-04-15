@@ -60,7 +60,7 @@ public class Personnel extends javax.swing.JFrame {
 
         jobPersonnelLabel.setFont(new java.awt.Font("B Titr", 1, 24)); // NOI18N
         jobPersonnelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jobPersonnelLabel.setText("شغل");
+        jobPersonnelLabel.setText("سمت");
 
         entranceButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         entranceButton.setText("ورود");
@@ -157,7 +157,7 @@ public class Personnel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void returnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnButtonActionPerformed
-        mainFrame mainframe = new mainFrame();
+        Menu mainframe = new Menu();
         this.setVisible(false);
         mainframe.showPanel();
     }//GEN-LAST:event_returnButtonActionPerformed
@@ -165,10 +165,10 @@ public class Personnel extends javax.swing.JFrame {
     private void entranceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entranceButtonActionPerformed
 
         try {
-            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")) {
+            if (jobPersonnelComboBox.getSelectedItem().toString().equals("پزشک")) {
                 readDoctorUsername();
             }
-            if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")) {
+            if (jobPersonnelComboBox.getSelectedItem().toString().equals("پرستار")) {
                 readNurseUsername();
             }
         } catch (IOException ex) {

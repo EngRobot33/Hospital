@@ -148,7 +148,7 @@
               <Font name="B Titr" size="24" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&#x634;&#x63a;&#x644;"/>
+            <Property name="text" type="java.lang.String" value="&#x633;&#x645;&#x62a;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="entranceButton">
