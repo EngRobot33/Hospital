@@ -56,6 +56,8 @@ public class CreateAccount extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
+
         jLabel1.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ایجاد حساب کاربری بیمار");
@@ -106,6 +108,7 @@ public class CreateAccount extends javax.swing.JFrame {
         historySickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         historySickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        createAccountButton.setBackground(new java.awt.Color(170, 216, 211));
         createAccountButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         createAccountButton.setText("ایجاد حساب");
         createAccountButton.setFocusable(false);
@@ -115,6 +118,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -124,6 +128,7 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
+        sexSickComboBox.setBackground(new java.awt.Color(170, 216, 211));
         sexSickComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         sexSickComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "مرد", "زن" }));
 
@@ -189,11 +194,12 @@ public class CreateAccount extends javax.swing.JFrame {
                     .addComponent(familySickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(familySickField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ageSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sexSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sexSickComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sexSickComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ageSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ageSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sexSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(illnessSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,15 +246,7 @@ public class CreateAccount extends javax.swing.JFrame {
                     ) {
                 JOptionPane.showInternalMessageDialog(null, "همه اطلاعات خواسته شده را وارد کنید.", "پیغام سیستم", 0);
             } else {
-                randomPassCodeGenerator();
-                writeSickID();
-                writeSickName();
-                writeSickFamily();
-                writeSickAge();
-                writeSickSex();
-                writeSickIllness();
-                writeSickHistory();
-                JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);
+                Writer();
             }
         } catch (IOException ex) {
             Logger.getLogger(CreateAccount.class.getName()).log(Level.SEVERE, null, ex);
@@ -296,6 +294,7 @@ public class CreateAccount extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setTitle("حسابداری | ایجاد حساب کاربری بیمار");
     }
 
     public void setCenter() {
@@ -303,96 +302,31 @@ public class CreateAccount extends javax.swing.JFrame {
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
     }
 
-    public void writeSickID() throws IOException {
-        String id = this.idSickField.getText();
-        File idSick = new File("src\\main\\java\\data\\sick\\" + id + " - id.txt");
-        FileWriter fileWriter = new FileWriter(idSick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(id);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickName() throws IOException {
+    public void Writer() throws IOException {
         String id = this.idSickField.getText();
         String name = this.nameSickField.getText();
-        File nameSick = new File("src\\main\\java\\data\\sick\\" + id + " - name.txt");
-        FileWriter fileWriter = new FileWriter(nameSick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(name);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickFamily() throws IOException {
-        String id = this.idSickField.getText();
         String family = this.familySickField.getText();
-        File familySick = new File("src\\main\\java\\data\\sick\\" + id + " - family.txt");
-        FileWriter fileWriter = new FileWriter(familySick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(family);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickAge() throws IOException {
-        String id = this.idSickField.getText();
         String age = this.ageSickField.getText();
-        File familySick = new File("src\\main\\java\\data\\sick\\" + id + " - age.txt");
-        FileWriter fileWriter = new FileWriter(familySick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(age);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickSex() throws IOException {
-        String id = this.idSickField.getText();
         String sex = this.sexSickComboBox.getSelectedItem().toString();
-        File sexSick = new File("src\\main\\java\\data\\sick\\" + id + " - sex.txt");
-        FileWriter fileWriter = new FileWriter(sexSick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(sex);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickIllness() throws IOException {
-        String id = this.idSickField.getText();
         String illness = this.illnessSickField.getText();
-        File illnessSick = new File("src\\main\\java\\data\\sick\\" + id + " - illness.txt");
-        FileWriter fileWriter = new FileWriter(illnessSick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(illness);
-        writer.flush();
-        writer.close();
-    }
-
-    public void writeSickHistory() throws IOException {
-        String id = this.idSickField.getText();
         String history = this.historySickField.getText();
-        File historySick = new File("src\\main\\java\\data\\sick\\" + id + " - history.txt");
-        FileWriter fileWriter = new FileWriter(historySick);
-        BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(history);
-        writer.flush();
-        writer.close();
-    }
-
-    public void randomPassCodeGenerator() throws IOException {
         SecureRandom random = new SecureRandom();
         int passcodeInt = random.nextInt(90000000) + 10000000;
         String passcode = passcodeInt + "";
-        String id = this.idSickField.getText();
-        File codeSick = new File("src\\main\\java\\data\\sick\\" + id + " - code.txt");
-        FileWriter fileWriter = new FileWriter(codeSick);
+        File myFile = new File("src\\main\\database\\sick\\" + id + " - info.txt");
+        FileWriter fileWriter = new FileWriter(myFile);
         BufferedWriter writer = new BufferedWriter(fileWriter);
-        writer.write(passcode);
+        
+        if(!myFile.exists()){
+        writer.write(id+"---"+name+"---"+family+"---"+age+"---"+sex+"---"+illness+"---"+history+"---"+passcode);
         writer.flush();
         writer.close();
-
         JOptionPane.showInternalMessageDialog(null, passcode, "رمز عبور بیمار", 1);
-
+        JOptionPane.showInternalMessageDialog(null, "حساب کاربری با موفقیت ساخته شد.", "پیغام سیستم", 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "کاربری با این کدملی وجود دارد.", "پیغام سیستم", 0);
+            System.out.println(passcode);
+        }
     }
 
 

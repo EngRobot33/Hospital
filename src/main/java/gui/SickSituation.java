@@ -42,10 +42,13 @@ public class SickSituation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
+
         situationSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         situationSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         situationSickLabel.setText("گزارش وضعیت بیمار");
 
+        reportTable.setBackground(new java.awt.Color(170, 216, 211));
         reportTable.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         reportTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,6 +77,7 @@ public class SickSituation extends javax.swing.JFrame {
         reportTable.setRowHeight(22);
         jScrollPane1.setViewportView(reportTable);
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -174,6 +178,7 @@ public class SickSituation extends javax.swing.JFrame {
         setFont();
         infoReader();
         rightAlignment();
+        setTitle("بیمار | گزارش وضعیت بیمار");
     }
 
     public void setCenter() {
@@ -185,7 +190,7 @@ public class SickSituation extends javax.swing.JFrame {
 
         String id = Sick.idSickField.getText();
 
-        File nameFile = new File("src\\main\\java\\data\\sick\\" + id + " - report.txt");
+        File nameFile = new File("src\\main\\database\\sick\\" + id + " - report.txt");
         FileReader nameFileReader = new FileReader(nameFile);
         BufferedReader nameReader = new BufferedReader(nameFileReader);
         String text = "";

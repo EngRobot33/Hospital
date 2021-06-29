@@ -46,10 +46,13 @@ public class AccountantShowBill extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(81, 196, 211));
+
         billSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         billSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         billSickLabel.setText("صورتحساب بیمار");
 
+        billTable.setBackground(new java.awt.Color(0, 173, 181));
         billTable.setFont(new java.awt.Font("B Nazanin", 1, 20)); // NOI18N
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,6 +81,7 @@ public class AccountantShowBill extends javax.swing.JFrame {
         billTable.setRowHeight(24);
         jScrollPane1.setViewportView(billTable);
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -176,6 +180,7 @@ public class AccountantShowBill extends javax.swing.JFrame {
         showSickName();
         billReader();
         rightAlignment();
+        setTitle("حسابداری | صورتحساب بیمار ");
     }
 
     public void setCenter() {

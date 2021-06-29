@@ -34,6 +34,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="mainPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="d3" green="c4" red="51" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -114,11 +119,13 @@
                       <Component id="familySickField" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ageSickLabel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="ageSickField" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="sexSickLabel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="sexSickComboBox" alignment="0" pref="42" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ageSickLabel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="ageSickField" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="sexSickLabel" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -263,6 +270,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="createAccountButton">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d3" green="d8" red="aa" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="B Titr" size="30" style="1"/>
             </Property>
@@ -275,6 +285,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="returnButton">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d3" green="d8" red="aa" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="B Titr" size="30" style="1"/>
             </Property>
@@ -287,6 +300,9 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="sexSickComboBox">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="d3" green="d8" red="aa" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="B Nazanin" size="18" style="1"/>
             </Property>

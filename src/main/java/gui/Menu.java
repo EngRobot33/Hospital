@@ -40,10 +40,13 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
+
         hospitalLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         hospitalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hospitalLabel.setText("سیستم مدیریت بیمارستان");
 
+        accountantButton.setBackground(new java.awt.Color(170, 216, 211));
         accountantButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         accountantButton.setText("حسابداری");
         accountantButton.setFocusable(false);
@@ -53,6 +56,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        personnelButton.setBackground(new java.awt.Color(170, 216, 211));
         personnelButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         personnelButton.setText("پرسنل");
         personnelButton.setFocusable(false);
@@ -62,6 +66,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        sickButton.setBackground(new java.awt.Color(170, 216, 211));
         sickButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         sickButton.setText("بیمار");
         sickButton.setFocusable(false);
@@ -71,6 +76,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        exitButton.setBackground(new java.awt.Color(170, 216, 211));
         exitButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         exitButton.setText("خروج");
         exitButton.setFocusable(false);
@@ -189,6 +195,7 @@ public class Menu extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setTitle("سیستم مدیریت بیمارستان");
     }
     
     public void setCenter() {

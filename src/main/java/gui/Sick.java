@@ -35,7 +35,7 @@ public class Sick extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         sickLabel = new javax.swing.JLabel();
         idSickLabel = new javax.swing.JLabel();
         passwordSickLabel = new javax.swing.JLabel();
@@ -45,6 +45,8 @@ public class Sick extends javax.swing.JFrame {
         returnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
 
         sickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         sickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -64,6 +66,7 @@ public class Sick extends javax.swing.JFrame {
         idSickField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         idSickField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        entranceButton.setBackground(new java.awt.Color(170, 216, 211));
         entranceButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         entranceButton.setText("ورود");
         entranceButton.setFocusable(false);
@@ -73,6 +76,7 @@ public class Sick extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -82,44 +86,44 @@ public class Sick extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(sickLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(entranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(155, 155, 155))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(passwordSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(passwordSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(idSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(sickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idSickField, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordSickField, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
@@ -133,11 +137,11 @@ public class Sick extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -150,9 +154,9 @@ public class Sick extends javax.swing.JFrame {
     }//GEN-LAST:event_returnButtonActionPerformed
 
     private void entranceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entranceButtonActionPerformed
-        if(idSickField.getText().isEmpty() || passwordSickField.getText().isEmpty()){
+        if (idSickField.getText().isEmpty() || passwordSickField.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "کد ملی و رمز عبور را وارد کنید.", "پیغام سیستم", 0);
-        }else{
+        } else {
             IDReader();
         }
     }//GEN-LAST:event_entranceButtonActionPerformed
@@ -196,31 +200,38 @@ public class Sick extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setTitle("بیمار");
     }
 
     public void setCenter() {
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dimension.width / 2 - this.getSize().width / 2, dimension.height / 2 - this.getSize().height / 2);
     }
-    
+
     public void IDReader() {
 
         String id = idSickField.getText();
         String password = passwordSickField.getText();
 
         try {
-            File IDfile = new File("src\\main\\java\\data\\sick\\" + id + " - id.txt");
-            FileReader IDfileReader = new FileReader(IDfile);
-            BufferedReader IDReader = new BufferedReader(IDfileReader);
+
+            File file = new File("src\\main\\database\\sick\\" + id + " - info.txt");
+            FileReader fileReader = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fileReader);
+
+            String text = "";
+            String line;
+            while ((line = reader.readLine()) != null) {
+                text += line + "---";
+            }
+
+            String[] data = text.split("---");
+
+            String idText = data[0];
+            String codeText = data[7];
             
-            File Passfile = new File("src\\main\\java\\data\\sick\\" + id + " - code.txt");
-            FileReader PassfileReader = new FileReader(Passfile);
-            BufferedReader PassReader = new BufferedReader(PassfileReader);
 
-            String idText = IDReader.readLine();
-            String codeText = PassReader.readLine();
-
-            if (idText.contains(id) && codeText.contains(password)) {
+            if (idText.equals(data[0]) && codeText.equals(data[7])) {
                 SickAccount sickAccount = new SickAccount();
                 this.setVisible(false);
                 sickAccount.showPanel();
@@ -229,11 +240,11 @@ public class Sick extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "نام کاربری یا رمز عبور اشتباه می باشد.", "اخطار سیستم", 0);
             }
 
-            IDReader.close();
-            PassReader.close();
+            reader.close();
 
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "اطلاعات نادرست وارد شده است.", "پیغام سیستم", 0);
+            System.out.println(e.getMessage());
         }
 
     }
@@ -242,7 +253,7 @@ public class Sick extends javax.swing.JFrame {
     private javax.swing.JButton entranceButton;
     public static javax.swing.JTextField idSickField;
     private javax.swing.JLabel idSickLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField passwordSickField;
     private javax.swing.JLabel passwordSickLabel;
     private javax.swing.JButton returnButton;

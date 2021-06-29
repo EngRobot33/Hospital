@@ -36,10 +36,12 @@ public class Entrance extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
 
+        hospitalIcon.setBackground(new java.awt.Color(81, 196, 211));
         hospitalIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/hospital.png"))); // NOI18N
 
+        entranceButton.setBackground(new java.awt.Color(170, 216, 211));
         entranceButton.setFont(new java.awt.Font("B Titr", 0, 36)); // NOI18N
         entranceButton.setText("ورود");
         entranceButton.setFocusable(false);
@@ -131,6 +133,7 @@ public class Entrance extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setTitle("ورود به بیمارستان");
     }
     
     public void setCenter() {

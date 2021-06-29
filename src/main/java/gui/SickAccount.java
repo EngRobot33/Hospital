@@ -36,17 +36,22 @@ public class SickAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
         nameSickLabel = new javax.swing.JLabel();
         healthDetailsButton = new javax.swing.JButton();
         billButton = new javax.swing.JButton();
         returnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 173, 181));
+
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
 
         nameSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         nameSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nameSickLabel.setText("نام بیمار: ");
 
+        healthDetailsButton.setBackground(new java.awt.Color(170, 216, 211));
         healthDetailsButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         healthDetailsButton.setText("گزارش وضعیت بیمار");
         healthDetailsButton.setFocusable(false);
@@ -56,6 +61,7 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
 
+        billButton.setBackground(new java.awt.Color(170, 216, 211));
         billButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         billButton.setText("مشاهده صورتحساب");
         billButton.setFocusable(false);
@@ -65,6 +71,7 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -74,34 +81,50 @@ public class SickAccount extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(nameSickLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(billButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(healthDetailsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
+                        .addGap(90, 90, 90))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(114, 114, 114))
+        );
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nameSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(healthDetailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(nameSickLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(billButton, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(healthDetailsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(returnButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(122, 122, 122))
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(nameSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(healthDetailsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(billButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -175,6 +198,7 @@ public class SickAccount extends javax.swing.JFrame {
         this.setVisible(true);
         nameSickReader();
         setCenter();
+        setTitle("بیمار | حساب کاربری");
     }
 
     public void setCenter() {
@@ -186,16 +210,21 @@ public class SickAccount extends javax.swing.JFrame {
 
         String id = Sick.idSickField.getText();
 
-        File nameFile = new File("src\\main\\java\\data\\sick\\" + id + " - name.txt");
-        FileReader nameFileReader = new FileReader(nameFile);
-        BufferedReader nameReader = new BufferedReader(nameFileReader);
+        File file = new File("src\\main\\database\\sick\\" + id + " - info.txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        
+        String text = "";
+        String line;
+        while((line = reader.readLine()) != null){
+            text += line + "---";
+        }
+        
+        String[] data = text.split("---");
 
-        File familyFile = new File("src\\main\\java\\data\\sick\\" + id + " - family.txt");
-        FileReader familyFileReader = new FileReader(familyFile);
-        BufferedReader familyReader = new BufferedReader(familyFileReader);
 
-        String nameText = nameReader.readLine();
-        String familyText = familyReader.readLine();
+        String nameText = data[1];
+        String familyText = data[2];
         String fullName = nameText + " " + familyText;
 
         nameSickLabel.setText(fullName);
@@ -205,6 +234,7 @@ public class SickAccount extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton billButton;
     private javax.swing.JButton healthDetailsButton;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel nameSickLabel;
     private javax.swing.JButton returnButton;
     // End of variables declaration//GEN-END:variables

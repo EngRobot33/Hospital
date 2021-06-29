@@ -41,7 +41,7 @@ public class SickShowBill extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         billSickLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         billTable = new javax.swing.JTable();
@@ -51,10 +51,13 @@ public class SickShowBill extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
+
         billSickLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         billSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         billSickLabel.setText("صورتحساب بیمار");
 
+        billTable.setBackground(new java.awt.Color(0, 173, 181));
         billTable.setFont(new java.awt.Font("B Nazanin", 1, 20)); // NOI18N
         billTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,6 +86,7 @@ public class SickShowBill extends javax.swing.JFrame {
         billTable.setRowHeight(24);
         jScrollPane1.setViewportView(billTable);
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -92,6 +96,7 @@ public class SickShowBill extends javax.swing.JFrame {
             }
         });
 
+        payButton.setBackground(new java.awt.Color(170, 216, 211));
         payButton.setFont(new java.awt.Font("B Titr", 1, 28)); // NOI18N
         payButton.setText("پرداخت");
         payButton.setFocusable(false);
@@ -105,35 +110,35 @@ public class SickShowBill extends javax.swing.JFrame {
         sumLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         sumLabel.setText("مبلغ قابل پرداخت: ");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
                     .addComponent(billSickLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addComponent(billSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sumLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(payButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -143,11 +148,11 @@ public class SickShowBill extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -159,7 +164,7 @@ public class SickShowBill extends javax.swing.JFrame {
         try {
             sickAccount.showPanel();
         } catch (IOException ex) {
-            Logger.getLogger(SickShowBill.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }//GEN-LAST:event_returnButtonActionPerformed
 
@@ -212,6 +217,7 @@ public class SickShowBill extends javax.swing.JFrame {
         billReader();
         showSum(getSum());
         rightAlignment();
+        setTitle("بیمار | صورتحساب بیمار");
     }
 
     public void setCenter() {
@@ -222,7 +228,7 @@ public class SickShowBill extends javax.swing.JFrame {
     public void billReader() throws FileNotFoundException, IOException {
         int sum = 0;
         String id = Sick.idSickField.getText();
-        File billFile = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        File billFile = new File("src\\main\\database\\sick\\" + id + " - bill.txt");
         FileReader billFileReader = new FileReader(billFile);
         BufferedReader billReader = new BufferedReader(billFileReader);
         String text = "";
@@ -260,7 +266,7 @@ public class SickShowBill extends javax.swing.JFrame {
     public int getSum() throws FileNotFoundException, IOException {
         int sum = 0;
         String id = Sick.idSickField.getText();
-        File billFile = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        File billFile = new File("src\\main\\database\\sick\\" + id + " - bill.txt");
         FileReader billFileReader = new FileReader(billFile);
         BufferedReader billReader = new BufferedReader(billFileReader);
         String text = "";
@@ -283,17 +289,19 @@ public class SickShowBill extends javax.swing.JFrame {
     public void showSickName() throws FileNotFoundException, IOException {
         String id = Sick.idSickField.getText();
 
-        File nameFile = new File("src\\main\\java\\data\\sick\\" + id + " - name.txt");
-        FileReader nameFileReader = new FileReader(nameFile);
-        BufferedReader nameReader = new BufferedReader(nameFileReader);
-        String name = nameReader.readLine();
+        File file = new File("src\\main\\database\\sick\\" + id + " - info.txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        
+        String text = "";
+        String line;
+        while((line = reader.readLine()) != null){
+            text += line + "---";
+        }
+        
+        String[] data = text.split("---");
 
-        File familyFile = new File("src\\main\\java\\data\\sick\\" + id + " - family.txt");
-        FileReader familyFileReader = new FileReader(familyFile);
-        BufferedReader familyReader = new BufferedReader(familyFileReader);
-        String family = familyReader.readLine();
-
-        billSickLabel.setText("صورتحساب " + name + " " + family);
+        billSickLabel.setText("صورتحساب " + data[1] + " " + data[2]);
     }
 
     public void setFont() {
@@ -314,8 +322,8 @@ public class SickShowBill extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel billSickLabel;
     private javax.swing.JTable billTable;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JButton payButton;
     private javax.swing.JButton returnButton;
     private javax.swing.JLabel sumLabel;

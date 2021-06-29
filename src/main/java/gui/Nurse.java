@@ -38,7 +38,7 @@ public class Nurse extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        mainPanel = new javax.swing.JPanel();
         nurseNameLabel = new javax.swing.JLabel();
         idSickLabel = new javax.swing.JLabel();
         idSickField = new javax.swing.JTextField();
@@ -50,6 +50,8 @@ public class Nurse extends javax.swing.JFrame {
         returnButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
 
         nurseNameLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
         nurseNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -70,12 +72,15 @@ public class Nurse extends javax.swing.JFrame {
         situationSickLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         situationSickLabel.setText("وضعیت بیمار");
 
+        drugComboBox.setBackground(new java.awt.Color(170, 216, 211));
         drugComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         drugComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "داروی شماره 1", "داروی شماره 2", "داروی شماره 3", "داروی شماره 4" }));
 
+        situationSickComboBox.setBackground(new java.awt.Color(170, 216, 211));
         situationSickComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         situationSickComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "خوب", "متوسط", "بد" }));
 
+        recordButton.setBackground(new java.awt.Color(170, 216, 211));
         recordButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         recordButton.setText("ثبت");
         recordButton.setFocusable(false);
@@ -85,6 +90,7 @@ public class Nurse extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -94,53 +100,53 @@ public class Nurse extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nurseNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(mainPanelLayout.createSequentialGroup()
                                     .addComponent(drugComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(drugLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createSequentialGroup()
                                     .addComponent(idSickField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                                 .addComponent(situationSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(situationSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(123, 123, 123)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(recordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(nurseNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idSickField, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(drugLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(drugComboBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(situationSickLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(situationSickComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
@@ -154,11 +160,11 @@ public class Nurse extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,11 +179,11 @@ public class Nurse extends javax.swing.JFrame {
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
         try {
             if (idSickField.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "کد ملی بیمار را وارد کنید.", "خطای سیستم", 0);  
+                JOptionPane.showMessageDialog(null, "کد ملی بیمار را وارد کنید.", "خطای سیستم", 0);
             } else {
-            writeSickReport();
-            billCalculator(); 
-            JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت در سیستم ثبت شد.", "پیغام سیستم", 1);
+                writeSickReport();
+                billCalculator();
+                JOptionPane.showMessageDialog(null, "اطلاعات با موفقیت در سیستم ثبت شد.", "پیغام سیستم", 1);
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "همچین بیماری وجود ندارد.", "خطای سیستم", 0);
@@ -225,6 +231,7 @@ public class Nurse extends javax.swing.JFrame {
         this.setResizable(false);
         usernameNurseReader();
         setCenter();
+        setTitle("پرسنل | پرستار");
     }
 
     public void setCenter() {
@@ -236,13 +243,19 @@ public class Nurse extends javax.swing.JFrame {
 
         String username = Personnel.idPersonnelField.getText();
 
-        File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - name.txt");
+        File IDfile = new File("src\\main\\database\\personnel\\nurse\\" + username + " - info.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
 
-        String idText = IDReader.readLine();
+        String text = "";
+        String line;
+        while ((line = IDReader.readLine()) != null) {
+            text += line + "---";
+        }
 
-        nurseNameLabel.setText(idText);
+        String[] data = text.split("---");
+
+        nurseNameLabel.setText(data[0]);
 
     }
 
@@ -252,15 +265,21 @@ public class Nurse extends javax.swing.JFrame {
         String situation = this.situationSickComboBox.getSelectedItem().toString();
         String username = Personnel.idPersonnelField.getText();
 
-        File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - name.txt");
+        File IDfile = new File("src\\main\\database\\personnel\\nurse\\" + username + " - info.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
 
-        String name = IDReader.readLine();
+        String text = "";
+        String line;
+        while ((line = IDReader.readLine()) != null) {
+            text += line + "---";
+        }
 
-        String report = name + ")   داروی مصرف شده: " + drug + "،   وضعیت حال بیمار: " + situation;
+        String[] data = text.split("---");
 
-        File nurseSick = new File("src\\main\\java\\data\\sick\\" + id + " - report.txt");
+        String report = data[0] + ")   داروی مصرف شده: " + drug + "،   وضعیت حال بیمار: " + situation;
+
+        File nurseSick = new File("src\\main\\database\\sick\\" + id + " - report.txt");
         FileWriter fileWriter = new FileWriter(nurseSick, true);
         BufferedWriter writer = new BufferedWriter(fileWriter);
         writer.write(report + "\r\n");
@@ -272,7 +291,7 @@ public class Nurse extends javax.swing.JFrame {
         String id = this.idSickField.getText();
         String drug = this.drugComboBox.getSelectedItem().toString();
 
-        File billCal = new File("src\\main\\java\\data\\sick\\" + id + " - bill.txt");
+        File billCal = new File("src\\main\\database\\sick\\" + id + " - bill.txt");
         FileWriter fileWriter = new FileWriter(billCal, true);
         BufferedWriter writer = new BufferedWriter(fileWriter);
 
@@ -287,13 +306,13 @@ public class Nurse extends javax.swing.JFrame {
             writer.flush();
             writer.close();
         }
-        
+
         if (drug.equals("داروی شماره 3")) {
             writer.write("300000\r\n");
             writer.flush();
             writer.close();
         }
-        
+
         if (drug.equals("داروی شماره 4")) {
             writer.write("400000\r\n");
             writer.flush();
@@ -307,7 +326,7 @@ public class Nurse extends javax.swing.JFrame {
     private javax.swing.JLabel drugLabel;
     private javax.swing.JTextField idSickField;
     private javax.swing.JLabel idSickLabel;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel nurseNameLabel;
     private javax.swing.JButton recordButton;
     private javax.swing.JButton returnButton;

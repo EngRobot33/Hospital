@@ -31,8 +31,8 @@ public class Personnel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        mainPanel = new javax.swing.JPanel();
+        entrancePersonnelLabel = new javax.swing.JLabel();
         idPersonnelField = new javax.swing.JTextField();
         idPersonnelLabel = new javax.swing.JLabel();
         passwordPersonnelField = new javax.swing.JTextField();
@@ -43,10 +43,13 @@ public class Personnel extends javax.swing.JFrame {
         passwordPersonnelLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 173, 181));
 
-        jLabel1.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ورود پرسنل بیمارستان");
+        mainPanel.setBackground(new java.awt.Color(81, 196, 211));
+
+        entrancePersonnelLabel.setFont(new java.awt.Font("B Titr", 1, 42)); // NOI18N
+        entrancePersonnelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        entrancePersonnelLabel.setText("ورود پرسنل بیمارستان");
 
         idPersonnelField.setFont(new java.awt.Font("B Titr", 1, 18)); // NOI18N
         idPersonnelField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -62,6 +65,7 @@ public class Personnel extends javax.swing.JFrame {
         jobPersonnelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jobPersonnelLabel.setText("سمت");
 
+        entranceButton.setBackground(new java.awt.Color(170, 216, 211));
         entranceButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         entranceButton.setText("ورود");
         entranceButton.setFocusable(false);
@@ -71,6 +75,7 @@ public class Personnel extends javax.swing.JFrame {
             }
         });
 
+        returnButton.setBackground(new java.awt.Color(170, 216, 211));
         returnButton.setFont(new java.awt.Font("B Titr", 1, 30)); // NOI18N
         returnButton.setText("بازگشت");
         returnButton.setFocusable(false);
@@ -80,6 +85,7 @@ public class Personnel extends javax.swing.JFrame {
             }
         });
 
+        jobPersonnelComboBox.setBackground(new java.awt.Color(170, 216, 211));
         jobPersonnelComboBox.setFont(new java.awt.Font("B Nazanin", 1, 18)); // NOI18N
         jobPersonnelComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "پزشک", "پرستار" }));
 
@@ -87,52 +93,52 @@ public class Personnel extends javax.swing.JFrame {
         passwordPersonnelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordPersonnelLabel.setText("رمز عبور");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                .addComponent(entrancePersonnelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(entranceButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(155, 155, 155))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(idPersonnelField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(idPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jobPersonnelComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(passwordPersonnelField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jobPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passwordPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(entrancePersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idPersonnelField, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordPersonnelField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passwordPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jobPersonnelComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jobPersonnelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
@@ -146,11 +152,11 @@ public class Personnel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -215,6 +221,7 @@ public class Personnel extends javax.swing.JFrame {
         this.setResizable(false);
         this.setVisible(true);
         setCenter();
+        setTitle("پرسنل");
     }
     
     public void setCenter() {
@@ -227,18 +234,20 @@ public class Personnel extends javax.swing.JFrame {
         String username = idPersonnelField.getText();
         String password = passwordPersonnelField.getText();
 
-        File IDfile = new File("src\\main\\java\\data\\personnel\\doctor\\" + username + " - username.txt");
+        File IDfile = new File("src\\main\\database\\personnel\\doctor\\" + username + " - info.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
+        
+        String text = "";
+            String line;
+            while ((line = IDReader.readLine()) != null) {
+                text += line + "---";
+            }
 
-        File Passfile = new File("src\\main\\java\\data\\personnel\\doctor\\" + password + " - password.txt");
-        FileReader PassfileReader = new FileReader(Passfile);
-        BufferedReader PassReader = new BufferedReader(PassfileReader);
+            String[] data = text.split("---");
 
-        String idText = IDReader.readLine();
-        String codeText = PassReader.readLine();
 
-        if (idText.contains(username) && codeText.contains(password)) {
+        if (username.equals(data[1]) && password.equals(data[1])) {
             if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پزشک")) {
                 Doctor doctor = new Doctor();
                 this.setVisible(false);
@@ -252,18 +261,19 @@ public class Personnel extends javax.swing.JFrame {
         String username = idPersonnelField.getText();
         String password = passwordPersonnelField.getText();
 
-        File IDfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + username + " - username.txt");
+        File IDfile = new File("src\\main\\database\\personnel\\nurse\\" + username + " - info.txt");
         FileReader IDfileReader = new FileReader(IDfile);
         BufferedReader IDReader = new BufferedReader(IDfileReader);
+        
+        String text = "";
+            String line;
+            while ((line = IDReader.readLine()) != null) {
+                text += line + "---";
+            }
 
-        File Passfile = new File("src\\main\\java\\data\\personnel\\nurse\\" + password + " - password.txt");
-        FileReader PassfileReader = new FileReader(Passfile);
-        BufferedReader PassReader = new BufferedReader(PassfileReader);
+            String[] data = text.split("---");
 
-        String idText = IDReader.readLine();
-        String codeText = PassReader.readLine();
-
-        if (idText.contains(username) && codeText.contains(password)) {
+        if (username.equals(data[1]) && password.equals(data[1])) {
             if (jobPersonnelComboBox.getSelectedItem().toString().equalsIgnoreCase("پرستار")) {
                 Nurse nurse = new Nurse();
                 this.setVisible(false);
@@ -277,12 +287,12 @@ public class Personnel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton entranceButton;
+    private javax.swing.JLabel entrancePersonnelLabel;
     public static javax.swing.JTextField idPersonnelField;
     private javax.swing.JLabel idPersonnelLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> jobPersonnelComboBox;
     private javax.swing.JLabel jobPersonnelLabel;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField passwordPersonnelField;
     private javax.swing.JLabel passwordPersonnelLabel;
     private javax.swing.JButton returnButton;
