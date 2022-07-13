@@ -1,23 +1,17 @@
-#Hospital_Management_System
+# Hospital Management System
 
-This project is a Hospital Management System.
+This is a Hospital Management System project with Java and its database is txt files.
 
-This app has 3 parts: I)Accountant II)Personnel III)Sick
+This app has 3 parts:
+* Accountant
+* Personnel
+* Sick
 
-I) Accountant:
-In this part, the accountant can create sick account and see sick bill.
+## Accountant:
+**The accountant** can `create sick account` and `see sick bill`.
 
-II) Personnel:
-In this part, doctors and nurses can log in and do their own job.
+## Personnel:
+**Doctors** and **Nurses** can `login` and `do their own job`.
 
-III) Sick:
-In this part, the inpatient can log in and pay the bill and see the result of hospitalize days.
-
-
-Developed by #EngRobot33
-
-
-
-
-tags:
-#Hospital #Hospital_Management_System #Java #Coding #File #txt #EngRobot33
+## Sick:
+**The inpatient** can `login` and `pay the bill` and `see the hospitalize days result`.
