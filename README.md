@@ -8,10 +8,10 @@ This app has 3 parts:
 * Sick
 
 ## Accountant:
-**The accountant** can `create sick account` and `see sick bill`.
+**The accountant** can `Create Sick Account` and `See Sick Bill`.
 
 ## Personnel:
-**Doctors** and **Nurses** can `login` and `do their own job`.
+**Doctors** and **Nurses** can `Login` then `Do Surgery` and `Medication`.
 
 ## Sick:
-**The inpatient** can `login` and `pay the bill` and `see the hospitalize days result`.
+**The inpatient** can `Login` then `Pay the Bill` and `See the Hospitalize Days Result`.
